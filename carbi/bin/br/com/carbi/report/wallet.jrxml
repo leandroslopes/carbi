@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="wallet" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d21ab55c-51ba-47d8-b9ba-5883c7ed8003">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="H2 DB"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value="IkNBUkJJIiAsMTUsMTUsYzI1Y2JmZWItOGVkNy00NTc1LWFmYmEtMDc4MTFlOWQwN2Y4Ow=="/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="585"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="415"/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<parameter name="parRegistration" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT "CARBI"."REGISTRATION",
+	"CARBI"."NAME",
+	"CARBI"."COURSE"
+FROM "CARBI"
+WHERE 
+	 $X{EQUAL,"CARBI"."REGISTRATION",parRegistration}]]>
+	</queryString>
+	<field name="REGISTRATION" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="REGISTRATION"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="CARBI"/>
+	</field>
+	<field name="NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NAME"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="CARBI"/>
+	</field>
+	<field name="COURSE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="COURSE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="CARBI"/>
+	</field>
+	<variable name="NAME1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{NAME}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="240" splitType="Stretch">
+			<image>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="1" width="553" height="229" uuid="5957d618-da85-4075-b967-120b3f260815"/>
+				<imageExpression><![CDATA["C:\\carbi.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement positionType="Float" x="399" y="61" width="151" height="14" uuid="7b005681-3694-4986-a0eb-e15ac5842adf"/>
+				<textElement>
+					<font fontName="Arial" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="78" width="145" height="16" uuid="9097ea3d-036a-452d-b73d-3451f10598f4"/>
+				<textElement>
+					<font fontName="Arial" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{REGISTRATION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="95" width="150" height="20" uuid="359e2499-c3d1-4688-b20b-c279389fb7b2"/>
+				<textElement>
+					<font fontName="Arial" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COURSE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="116" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="164" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
